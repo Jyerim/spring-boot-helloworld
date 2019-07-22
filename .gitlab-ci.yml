@@ -1,4 +1,8 @@
+stages:
+        - deploy
+
 deploy-to-production-server:
+        stage: deploy
         only:
                 -master
         script:
