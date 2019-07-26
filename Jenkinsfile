@@ -1,7 +1,8 @@
 node {
    
     stage('generate target folder') {
-        sh './mvnw clean package'
+         sh 'chmod u+x mvnw'
+	 sh './mvnw clean package'
     }
     
     dir('target'){
