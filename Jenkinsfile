@@ -7,7 +7,8 @@ node {
     
     dir('target'){
         stage('execute java') {
-        sh 'java -jar *.jar'
+        	sh 'java -jar *.jar'
+	}
     }
 
 }
