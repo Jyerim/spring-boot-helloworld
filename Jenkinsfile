@@ -1,4 +1,5 @@
 node {
+   
     stage('generate target folder') {
         sh './mvnw clean package'
     }
