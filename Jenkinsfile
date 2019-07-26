@@ -1,7 +1,6 @@
 node{
 	dir('spring-boot-helloworld'){
 		stage('generate target folder'){
-			sh 'll'
 			sh 'chmod u+x mvnw'
 			sh './mvnw clean package'
 		}
