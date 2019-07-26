@@ -1,13 +1,11 @@
 node {
-    stage('Ready') {
-        sh "echo 'Ready'"
+    stage('generate target folder') {
+        sh './mvnw clean package'
     }
     
-    stage('Build') {
-        sh "echo 'Build Jar'"
+    dir('target'){
+        stage('execute java') {
+        sh 'java -jar *.jar'
     }
 
-    stage('Deploy') {
-        sh "echo 'Deply AWS'"
-    }
 }
