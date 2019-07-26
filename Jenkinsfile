@@ -1,12 +1,12 @@
 node{
-	dir('spring-boot-helloworld'){
-		stage('generate target folder'){
-			sh './mvnw clean package'
-		}
-		
-		
+	stage('clone'){
+		git 'https://github.com/Jyerim/spring-boot-helloworld.git'
 	}
-	dir('spring-boot-helloworld/target'){
+	stage('generate target folder'){
+		sh 'chmod u+x mvnw'
+		sh './mvnw clean package'
+	}
+	dir('target'){
 		stage('execute java'){
 			sh 'java -jar *.jar'
 		}
